@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4997885C2547362E00F48999 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997885B2547362E00F48999 /* LoadData.swift */; };
-		49978862254739C500F48999 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49978861254739C500F48999 /* UserData.swift */; };
 		49A438392541EA5C0005ABBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A438382541EA5C0005ABBD /* AppDelegate.swift */; };
 		49A4383B2541EA5C0005ABBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */; };
 		49A4383D2541EA5C0005ABBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4383C2541EA5C0005ABBD /* ViewController.swift */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		4997885B2547362E00F48999 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
-		49978861254739C500F48999 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		49A438352541EA5C0005ABBD /* tableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A438382541EA5C0005ABBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,14 +88,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		499788602547398800F48999 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				49978861254739C500F48999 /* UserData.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		49A4382C2541EA5B0005ABBD = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +111,6 @@
 		49A438372541EA5C0005ABBD /* tableTest */ = {
 			isa = PBXGroup;
 			children = (
-				499788602547398800F48999 /* Models */,
 				4997885A254735DB00F48999 /* Services */,
 				49A438382541EA5C0005ABBD /* AppDelegate.swift */,
 				49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */,
@@ -283,7 +272,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49978862254739C500F48999 /* UserData.swift in Sources */,
 				49A4383D2541EA5C0005ABBD /* ViewController.swift in Sources */,
 				4997885C2547362E00F48999 /* LoadData.swift in Sources */,
 				49A438392541EA5C0005ABBD /* AppDelegate.swift in Sources */,

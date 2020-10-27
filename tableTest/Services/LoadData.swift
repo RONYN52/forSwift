@@ -11,42 +11,34 @@ class LoadData: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
     func loadData(sendText: String, completion: @escaping (Item?)->Void) {
-
-
-let url = URL(string: "https://jsonplaceholder.typicode.com/todos/"+sendText)!
-//let session = URLSession.shared
-// let request = URLRequest(url: url)
-URLSession.shared.dataTask(with: url) { (data, respons, error) in
+   let url = URL(string: "https://jsonplaceholder.typicode.com/todos/"+sendText)!
+   URLSession.shared.dataTask(with: url) { (data, respons, error) in
    let decoder = JSONDecoder()
    decoder.keyDecodingStrategy = .convertFromSnakeCase
    guard let data = data else {
        return
    }
-   do {
+   do  {
        let result = try decoder.decode(Item.self, from: data)
        DispatchQueue.main.async {
            guard let id = result.id else {
-               return
+                return
            }
-        completion(result.self)
-       }
-       
-   } catch  {
-      completion(nil)
-       
-   }
-}.resume()
+                completion(result.self)
+                                }
+        } catch  {
+            completion(nil)
+                 }
+        }.resume()
     }
-
 }
 
 struct Item: Codable {

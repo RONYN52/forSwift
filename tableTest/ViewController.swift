@@ -11,9 +11,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
+    
     private lazy var service = LoadData()
     @IBOutlet weak var textOut: UITextField!
     @IBOutlet weak var textIn: UITextView!
@@ -25,18 +24,15 @@ class ViewController: UIViewController {
             return
         }
         service.loadData(sendText: sendText){ [weak self] (results) in
-            
             guard let self = self,
                   let user = results
             else {
                 return
             }
-           
-                self.textIn.text.append(user.title!)
-        
-            
+            if var title = user.title {
+                self.textIn.text.append(user.title ?? "")
+            }
         }
-        
     }
 }
 
