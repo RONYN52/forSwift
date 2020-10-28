@@ -10,11 +10,11 @@ import UIKit
 class NetworkService {
     
     func loadDataFromServers(sendText: String, completion: @escaping (UserData?) -> Void) {
-        if let url = URL(string: URLs.baseURL + sendText) {
-   URLSession.shared.dataTask(with: url) { (data, respons, error) in
-   let decoder = JSONDecoder()
-   decoder.keyDecodingStrategy = .convertFromSnakeCase
-   guard let data = data else {
+    if let url = URL(string: URLs.baseURL + sendText) {
+       URLSession.shared.dataTask(with: url) { (data, respons, error) in
+       let decoder = JSONDecoder()
+       decoder.keyDecodingStrategy = .convertFromSnakeCase
+       guard let data = data else {
        return
    }
    do  {

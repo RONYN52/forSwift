@@ -9,14 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
     @IBOutlet private weak var textIn: UITextView!
-    @IBAction func getTextOutAction(_ sender: Any) {
+    @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
     @IBAction private func getButtonAction(_ sender: Any) {
