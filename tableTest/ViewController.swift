@@ -13,24 +13,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private lazy var service = LoadData()
-    @IBOutlet weak var textOut: UITextField!
-    @IBOutlet weak var textIn: UITextView!
-    @IBAction func getButtonAction(_ sender: Any) {
+    private lazy var service = NetworkService()
+    @IBOutlet private weak var textOut: UITextField!
+    @IBOutlet private weak var textIn: UITextView!
+    @IBAction func getTextOutAction(_ sender: Any) {
+        textOut.text = ""
+    }
+    @IBAction private func getButtonAction(_ sender: Any) {
         textIn.text = ""
         guard
             let sendText = textOut.text
         else {
             return
         }
-        service.loadData(sendText: sendText){ [weak self] (results) in
+        service.loadDataFromServers(sendText: sendText){ [weak self] (results) in
             guard let self = self,
                   let user = results
             else {
                 return
             }
-            if var title = user.title {
-                self.textIn.text.append(user.title ?? "")
+            if let title = user.title {
+                self.textIn.text.append(title)
             }
         }
     }
