@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="getTextOutAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="hw4-Tu-tkG"/>
+                                    <action selector="getTextOutAction:" destination="BYZ-38-t0r" eventType="touchDown" id="ZoG-Ik-5bF"/>
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ReceiveText: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WSW-5H-xH9">

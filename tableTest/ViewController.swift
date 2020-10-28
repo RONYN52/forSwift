@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
@@ -29,9 +29,11 @@ class ViewController: UIViewController {
             else {
                 return
             }
-            if let title = user.title {
-                self.textIn.text.append(title)
+            guard let title = user.title
+            else {
+                return
             }
+            self.textIn.text.append(title)
         }
     }
 }
