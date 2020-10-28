@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct UserData: Codable {
    let userId: Int?
    let id: Int?

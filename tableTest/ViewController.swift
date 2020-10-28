@@ -25,11 +25,8 @@ class ViewController: UIViewController {
         }
         service.loadDataFromServers(sendText: sendText){ [weak self] (results) in
             guard let self = self,
-                  let user = results
-            else {
-                return
-            }
-            guard let title = user.title
+                  let user = results,
+                  let title = user.title
             else {
                 return
             }
