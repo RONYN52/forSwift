@@ -23,10 +23,6 @@ class NetworkService {
             do  {
                 let result = try decoder.decode(UserData.self, from: data)
                 DispatchQueue.main.async {
-                    guard let _ = result.id
-                    else {
-                        return
-                    }
                     completion(result.self)
                 }
             } catch  {
