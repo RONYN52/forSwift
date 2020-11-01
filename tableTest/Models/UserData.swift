@@ -2,8 +2,10 @@
 //  UserData.swift
 //  tableTest
 //
-//  Created by Andrew Iskandarov on 26.10.2020.
-//import Foundation
+//  Created by Andrew Iskandarov on 27.10.2020.
+//
+
+import Foundation
 
 struct UserData: Codable {
    let userId: Int?
