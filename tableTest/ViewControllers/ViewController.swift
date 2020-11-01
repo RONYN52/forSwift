@@ -12,12 +12,10 @@ class ViewController: UIViewController {
     
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
-    @IBOutlet private weak var textIn: UITextView!
     @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
     @IBAction private func getButtonAction(_ sender: Any) {
-        textIn.text = ""
         guard
             let sendText = textOut.text
         else {
@@ -30,7 +28,7 @@ class ViewController: UIViewController {
             else {
                 return
             }
-            self.textIn.text.append(title)
+            self.textOut.text = title
         }
     }
 }

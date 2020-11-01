@@ -108,6 +108,15 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		49978885254B27B900F48999 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				49A4383C2541EA5C0005ABBD /* ViewController.swift */,
+				49A4383E2541EA5C0005ABBD /* Main.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		49A4382C2541EA5B0005ABBD = {
 			isa = PBXGroup;
 			children = (
@@ -131,13 +140,12 @@
 		49A438372541EA5C0005ABBD /* tableTest */ = {
 			isa = PBXGroup;
 			children = (
+				49978885254B27B900F48999 /* ViewControllers */,
 				4997887C254944A200F48999 /* Enums */,
 				499788702548AD0F00F48999 /* Models */,
 				4997885A254735DB00F48999 /* Services */,
 				49A438382541EA5C0005ABBD /* AppDelegate.swift */,
 				49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */,
-				49A4383C2541EA5C0005ABBD /* ViewController.swift */,
-				49A4383E2541EA5C0005ABBD /* Main.storyboard */,
 				49A438442541EA5D0005ABBD /* Assets.xcassets */,
 				49A438462541EA5D0005ABBD /* LaunchScreen.storyboard */,
 				49A438492541EA5D0005ABBD /* Info.plist */,
