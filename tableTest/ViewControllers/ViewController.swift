@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
+        
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
     @IBAction private func getTextOutAction(_ sender: Any) {
