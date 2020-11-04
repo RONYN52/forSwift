@@ -11,6 +11,11 @@ class ViewController: UIViewController {
         
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
+    @IBAction func getButtonOpenTableAction(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "MainTableViewController", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "MainTableViewController") as! MainTableViewController
+        self.present(vc, animated: true, completion: nil)
+    }
     @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
