@@ -11,15 +11,15 @@ class ViewController: UIViewController {
         
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
-    @IBAction func getButtonOpenTableAction(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "MainTableViewController", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "MainTableViewController") as! MainTableViewController
+    @IBAction private func loadAllUserAction(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "UserTableViewController", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as! UserTableViewController
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
-    @IBAction private func getButtonAction(_ sender: Any) {
+    @IBAction private func loadSingleUserAction(_ sender: Any) {
         guard
             let sendText = textOut.text
         else {

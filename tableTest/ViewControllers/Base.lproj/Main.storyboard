@@ -32,14 +32,14 @@
                                 <rect key="frame" x="138" y="172" width="138" height="30"/>
                                 <state key="normal" title="Load single element"/>
                                 <connections>
-                                    <action selector="getButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wnc-M6-B43"/>
+                                    <action selector="loadSingleUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wnc-M6-B43"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tK-fz-GVX">
                                 <rect key="frame" x="181" y="226" width="53" height="30"/>
                                 <state key="normal" title="Load all"/>
                                 <connections>
-                                    <action selector="getButtonOpenTableAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jIf-VO-udb"/>
+                                    <action selector="loadAllUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jIf-VO-udb"/>
                                 </connections>
                             </button>
                         </subviews>
