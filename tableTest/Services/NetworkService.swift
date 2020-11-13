@@ -9,7 +9,7 @@ import UIKit
 
 class NetworkService {
     
-    func loadDataFromServers(sendText: String, completion: @escaping (UserData?) -> Void) {
+    func loadDataFromServers(sendText: String, completion: @escaping ([UserData]?) -> Void) {
         guard let url = URL(string: URLs.baseURL + sendText)
         else {
             return
@@ -20,17 +20,20 @@ class NetworkService {
             guard let data = data else {
                 return
             }
-            do  {
-                let result = try decoder.decode(UserData.self, from: data)
+            do {
+                let result = try decoder.decode(userRespons.self, from: data)
                 DispatchQueue.main.async {
-                    completion(result.self)
+                    completion(result.results)
                 }
-            } catch  {
+            } catch {
                 completion(nil)
             }
         }.resume()
     }
 }
 
+private struct userRespons: Codable {
+    let results: [UserData]
+}
 
 

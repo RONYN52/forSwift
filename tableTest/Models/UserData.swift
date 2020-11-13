@@ -12,4 +12,16 @@ struct UserData: Codable {
    let id: Int?
    let title: String?
    let completed: Bool?
+    func getTitle() -> String? {
+        return self.title
+    }
+    func getUserId() -> Int? {
+        return self.userId
+    }
+    func getId() -> Int? {
+        return self.id
+    }
+    func getCompleted() -> Bool? {
+        return self.completed
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-        
+    
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
     @IBAction private func loadAllUserAction(_ sender: Any) {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         service.loadDataFromServers(sendText: sendText){ [weak self] (results) in
             guard let self = self,
                   let user = results,
-                  let title = user.title
+                  let title = user[1].title
             else {
                 return
             }
