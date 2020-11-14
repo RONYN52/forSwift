@@ -9,6 +9,7 @@ import UIKit
 
 class UserTableViewController: UIViewController {
     private let idCell = "mainCell"
+    private var cellCount = 0
     @IBOutlet weak var tableView: UITableView!
     private lazy var service = NetworkService()
     private var userData: [UserData]? {
@@ -36,15 +37,14 @@ class UserTableViewController: UIViewController {
 }
 extension UserTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 200
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! UserTableViewCell
         if let allUser = self.userData {
-            cell.configure(with: allUser)
-        } else {
-            cell.textLabel?.text = "nil"
+            cell.configure(with: allUser[cellCount])
+            cellCount += 1
         }
         return cell
     }

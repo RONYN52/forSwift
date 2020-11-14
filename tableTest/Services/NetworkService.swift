@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class NetworkService {
     
@@ -21,9 +22,9 @@ class NetworkService {
                 return
             }
             do {
-                let result = try decoder.decode(userRespons.self, from: data)
+                let result = try decoder.decode([UserData].self, from: data)
                 DispatchQueue.main.async {
-                    completion(result.results)
+                    completion(result)
                 }
             } catch {
                 completion(nil)

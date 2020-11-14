@@ -12,18 +12,16 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var labelUserId: UILabel!
     @IBOutlet weak var labelId: UILabel!
     @IBOutlet weak var labelCompleted: UILabel!
-    func configure(with: [UserData]){
-        for user in with {
-        labelTitle.text = user.getTitle()
-        guard let id = user.getId(),
-              let userId = user.getUserId(),
-              let completed = user.getCompleted()
+    func configure(with: UserData){
+            labelTitle.text = with.title
+            guard let id = with.id,
+                  let userId = with.userId,
+                  let completed = with.completed
         else {
             return
         }
         labelUserId.text = String(id)
         labelId.text = String(userId)
         labelCompleted.text = completed.description
-        }
     }
 }
