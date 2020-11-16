@@ -25,7 +25,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="getTextOutAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="GUI-SN-ZMG"/>
                                     <action selector="getTextOutAction:" destination="BYZ-38-t0r" eventType="touchDown" id="ZoG-Ik-5bF"/>
+                                    <action selector="inputTextOutAction:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="EXd-8A-Sjm"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wol-ql-BMs">

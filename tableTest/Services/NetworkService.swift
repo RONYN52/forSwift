@@ -27,6 +27,14 @@ class NetworkService {
                     completion(result)
                 }
             } catch {
+                do {
+                    let result = try decoder.decode(UserData.self, from: data)
+                    DispatchQueue.main.async {
+                        completion([result])
+                    }
+                } catch {
+                    completion(nil)
+                }
                 completion(nil)
             }
         }.resume()

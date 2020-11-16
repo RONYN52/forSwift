@@ -9,7 +9,7 @@ import UIKit
 
 class UserTableViewController: UIViewController {
     private let idCell = "mainCell"
-    private var cellCount = 0
+    private var cellCounter = 0
     @IBOutlet weak var tableView: UITableView!
     private lazy var service = NetworkService()
     private var userData: [UserData]? {
@@ -37,16 +37,19 @@ class UserTableViewController: UIViewController {
 }
 extension UserTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 200
+        guard let cellCount = self.userData?.count
+        else {
+            return 0
+        }
+        return cellCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as! UserTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? UserTableViewCell
         if let allUser = self.userData {
-            cell.configure(with: allUser[cellCount])
-            cellCount += 1
+            cell?.configure(with: allUser[indexPath.row])
         }
-        return cell
+        return cell ?? UITableViewCell()
     }
     
     

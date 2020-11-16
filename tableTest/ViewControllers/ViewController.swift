@@ -19,16 +19,22 @@ class ViewController: UIViewController {
     @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
+    @IBAction func inputTextOutAction(_ sender: Any) {
+        guard var _ = Int(textOut.text ?? "1")
+        else {
+            return textOut.text = ""
+        }
+    }
     @IBAction private func loadSingleUserAction(_ sender: Any) {
         guard
             let sendText = textOut.text
         else {
             return
         }
-        service.loadDataFromServers(sendText: sendText){ [weak self] (results) in
+        service.loadDataFromServers(sendText: sendText){ [weak self] (result) in
             guard let self = self,
-                  let user = results,
-                  let title = user[1].title
+                  let user = result,
+                  let title = user[0].title
             else {
                 return
             }
