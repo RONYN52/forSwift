@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     private lazy var service = NetworkService()
     @IBOutlet private weak var textOut: UITextField!
     @IBAction private func loadAllUserAction(_ sender: Any) {
@@ -16,25 +15,23 @@ class ViewController: UIViewController {
         let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as! UserTableViewController
         self.present(vc, animated: true, completion: nil)
     }
+    // MARK: - ClearTextOnTouch
     @IBAction private func getTextOutAction(_ sender: Any) {
         textOut.text = ""
     }
-    @IBAction func inputTextOutAction(_ sender: Any) {
+    // MARK: - CheckingTheInputText
+    @IBAction func inputTextAction(_ sender: Any) {
         guard var _ = Int(textOut.text ?? "1")
         else {
             return textOut.text = ""
         }
     }
+    // MARK: - LoadDataFromServers
     @IBAction private func loadSingleUserAction(_ sender: Any) {
-        guard
-            let sendText = textOut.text
-        else {
-            return
-        }
-        service.loadDataFromServers(sendText: sendText){ [weak self] (result) in
+        service.loadDataFromServers(sendText: ""){ [weak self] (result) in
             guard let self = self,
                   let user = result,
-                  let title = user[0].title
+                  let title = user[(Int(self.textOut.text ?? "1") ?? 1) - 1].title
             else {
                 return
             }
