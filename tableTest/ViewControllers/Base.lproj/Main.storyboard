@@ -71,7 +71,7 @@
         <!--Navigation Controller-->
         <scene sceneID="e4o-ba-pfn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i8o-ZE-K0M" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i8o-ZE-K0M" customClass="NavigationController" customModule="tableTest" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aRh-vk-8JT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>

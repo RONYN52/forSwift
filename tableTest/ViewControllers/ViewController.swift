@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         else {
             return
         }
+        vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
     }
     // MARK: - ClearTextOnTouch

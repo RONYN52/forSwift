@@ -21,6 +21,7 @@
 		49A4385E2541EA5E0005ABBD /* tableTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4385D2541EA5E0005ABBD /* tableTestUITests.swift */; };
 		49C39A2C25595AEC003D5DF4 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C39A2A25595AEC003D5DF4 /* UserTableViewCell.swift */; };
 		49C39A2D25595AEC003D5DF4 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49C39A2B25595AEC003D5DF4 /* UserTableViewCell.xib */; };
+		49C39A3225726ECC003D5DF4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C39A3125726ECC003D5DF4 /* NavigationController.swift */; };
 		49F413F4254F1993004A5B75 /* UserTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F413F3254F1993004A5B75 /* UserTableViewController.storyboard */; };
 		49F413F9254F19DA004A5B75 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F413F8254F19DA004A5B75 /* UserTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		49A4385F2541EA5E0005ABBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49C39A2A25595AEC003D5DF4 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		49C39A2B25595AEC003D5DF4 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		49C39A3125726ECC003D5DF4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		49F413F3254F1993004A5B75 /* UserTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserTableViewController.storyboard; sourceTree = "<group>"; };
 		49F413F8254F19DA004A5B75 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				49C39A2A25595AEC003D5DF4 /* UserTableViewCell.swift */,
 				49C39A2B25595AEC003D5DF4 /* UserTableViewCell.xib */,
 				49F413F8254F19DA004A5B75 /* UserTableViewController.swift */,
+				49C39A3125726ECC003D5DF4 /* NavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				4997887E2549452B00F48999 /* URLs.swift in Sources */,
 				49F413F9254F19DA004A5B75 /* UserTableViewController.swift in Sources */,
 				49A438392541EA5C0005ABBD /* AppDelegate.swift in Sources */,
+				49C39A3225726ECC003D5DF4 /* NavigationController.swift in Sources */,
 				49A438432541EA5C0005ABBD /* tableTest.xcdatamodeld in Sources */,
 				49A4383B2541EA5C0005ABBD /* SceneDelegate.swift in Sources */,
 			);
