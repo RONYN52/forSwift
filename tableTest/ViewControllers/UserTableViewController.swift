@@ -30,10 +30,6 @@ class UserTableViewController: UIViewController {
         }
         tableView.dataSource = self
     }
-    // MARK: - CloseView
-    @IBAction private func getBackButtonAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 // MARK: - CreateTableCell
 extension UserTableViewController: UITableViewDataSource {

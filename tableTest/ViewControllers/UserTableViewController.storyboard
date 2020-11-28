@@ -16,13 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eej-xI-MzU">
-                                <rect key="frame" x="47" y="20" width="34" height="30"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="getBackButtonAction:" destination="jwZ-rj-UJJ" eventType="touchUpInside" id="Vgg-wf-3Om"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="44" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="155-5i-QSv">
                                 <rect key="frame" x="0.0" y="76" width="414" height="660"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,11 +24,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U5e-FQ-eTd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Eej-xI-MzU" firstAttribute="top" secondItem="U5e-FQ-eTd" secondAttribute="top" constant="20" id="IYj-Ap-wxb"/>
-                            <constraint firstItem="Eej-xI-MzU" firstAttribute="leading" secondItem="U5e-FQ-eTd" secondAttribute="leading" constant="47" id="KWl-05-0yW"/>
-                            <constraint firstItem="U5e-FQ-eTd" firstAttribute="trailing" secondItem="Eej-xI-MzU" secondAttribute="trailing" constant="333" id="OQD-Ck-D0e"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="155-5i-QSv" id="75F-r5-Z5z"/>
