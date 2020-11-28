@@ -8,10 +8,10 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelUserId: UILabel!
-    @IBOutlet weak var labelId: UILabel!
-    @IBOutlet weak var labelCompleted: UILabel!
+    @IBOutlet private weak var labelTitle: UILabel!
+    @IBOutlet private weak var labelUserId: UILabel!
+    @IBOutlet private weak var labelId: UILabel!
+    @IBOutlet private weak var labelCompleted: UILabel!
     // MARK: - ConfigureCellWithData
     func configure(with userData: UserData){
         labelTitle.text = userData.title

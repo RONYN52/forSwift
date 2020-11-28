@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet private weak var textOut: UITextField!
     @IBAction private func loadAllUserAction(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "UserTableViewController", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as! UserTableViewController
+        guard let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as? UserTableViewController
+        else {
+            return
+        }
         self.present(vc, animated: true, completion: nil)
     }
     // MARK: - ClearTextOnTouch
@@ -20,7 +23,7 @@ class ViewController: UIViewController {
         textOut.text = ""
     }
     // MARK: - CheckingTheInputText
-    @IBAction func inputTextAction(_ sender: Any) {
+    @IBAction private func inputTextAction(_ sender: Any) {
         guard var _ = Int(textOut.text ?? "1")
         else {
             return textOut.text = ""
@@ -31,7 +34,9 @@ class ViewController: UIViewController {
         service.loadDataFromServers(sendText: ""){ [weak self] (result) in
             guard let self = self,
                   let user = result,
-                  let title = user[(Int(self.textOut.text ?? "1") ?? 1) - 1].title
+                  let textOutString = self.textOut.text,
+                  let index = Int(textOutString),
+                  let title = user[index - 1].title
             else {
                 return
             }
