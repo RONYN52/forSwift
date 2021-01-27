@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		16FF628F5460B06303F58144 /* Pods_tableTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E0259C9CC542FDC1A7DBE /* Pods_tableTest.framework */; };
+		491FB0A32584BFAB00844FCD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FB0A22584BFAB00844FCD /* AuthenticationService.swift */; };
+		492EC74125852A9B00C4BE1A /* WineColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC74025852A9B00C4BE1A /* WineColors.swift */; };
+		492EC74625860F7100C4BE1A /* WineByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492EC74525860F7100C4BE1A /* WineByCategory.swift */; };
+		4946B5222588D66C00653CB1 /* WineSummaryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946B5212588D66C00653CB1 /* WineSummaryInfo.swift */; };
 		4997885C2547362E00F48999 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997885B2547362E00F48999 /* NetworkService.swift */; };
 		499788752548ADB300F48999 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499788742548ADB300F48999 /* UserData.swift */; };
 		4997887E2549452B00F48999 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997887D2549452B00F48999 /* URLs.swift */; };
 		49A438392541EA5C0005ABBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A438382541EA5C0005ABBD /* AppDelegate.swift */; };
-		49A4383B2541EA5C0005ABBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */; };
 		49A4383D2541EA5C0005ABBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4383C2541EA5C0005ABBD /* ViewController.swift */; };
 		49A438402541EA5C0005ABBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49A4383E2541EA5C0005ABBD /* Main.storyboard */; };
 		49A438432541EA5C0005ABBD /* tableTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49A438412541EA5C0005ABBD /* tableTest.xcdatamodeld */; };
@@ -49,12 +52,15 @@
 		211322B349F57EAABDB061A0 /* Pods_tableTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tableTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2304ADFD611FD7C8A2CDD90D /* Pods-tableTest-tableTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tableTest-tableTestUITests.release.xcconfig"; path = "Target Support Files/Pods-tableTest-tableTestUITests/Pods-tableTest-tableTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		295E0259C9CC542FDC1A7DBE /* Pods_tableTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tableTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		491FB0A22584BFAB00844FCD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		492EC74025852A9B00C4BE1A /* WineColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineColors.swift; sourceTree = "<group>"; };
+		492EC74525860F7100C4BE1A /* WineByCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineByCategory.swift; sourceTree = "<group>"; };
+		4946B5212588D66C00653CB1 /* WineSummaryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineSummaryInfo.swift; sourceTree = "<group>"; };
 		4997885B2547362E00F48999 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		499788742548ADB300F48999 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4997887D2549452B00F48999 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		49A438352541EA5C0005ABBD /* tableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A438382541EA5C0005ABBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49A4383C2541EA5C0005ABBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49A4383F2541EA5C0005ABBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49A438422541EA5C0005ABBD /* tableTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tableTest.xcdatamodel; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4997885B2547362E00F48999 /* NetworkService.swift */,
+				491FB0A22584BFAB00844FCD /* AuthenticationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				499788742548ADB300F48999 /* UserData.swift */,
+				492EC74525860F7100C4BE1A /* WineByCategory.swift */,
+				4946B5212588D66C00653CB1 /* WineSummaryInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				4997887D2549452B00F48999 /* URLs.swift */,
+				492EC74025852A9B00C4BE1A /* WineColors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -184,7 +194,6 @@
 				499788702548AD0F00F48999 /* Models */,
 				4997885A254735DB00F48999 /* Services */,
 				49A438382541EA5C0005ABBD /* AppDelegate.swift */,
-				49A4383A2541EA5C0005ABBD /* SceneDelegate.swift */,
 				49A438442541EA5D0005ABBD /* Assets.xcassets */,
 				49A438462541EA5D0005ABBD /* LaunchScreen.storyboard */,
 				49A438492541EA5D0005ABBD /* Info.plist */,
@@ -235,6 +244,8 @@
 				49A438312541EA5C0005ABBD /* Sources */,
 				49A438322541EA5C0005ABBD /* Frameworks */,
 				49A438332541EA5C0005ABBD /* Resources */,
+				49C39A472572AD6F003D5DF4 /* ShellScript */,
+				FAC7F5B391EE991EB438F352 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +283,7 @@
 				49A438552541EA5E0005ABBD /* Sources */,
 				49A438562541EA5E0005ABBD /* Frameworks */,
 				49A438572541EA5E0005ABBD /* Resources */,
+				2B54847712DF71694C07AA32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,6 +389,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2B54847712DF71694C07AA32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tableTest-tableTestUITests/Pods-tableTest-tableTestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tableTest-tableTestUITests/Pods-tableTest-tableTestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tableTest-tableTestUITests/Pods-tableTest-tableTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49C39A472572AD6F003D5DF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		C9BB8ABE4979F5CAF4A4CD37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +467,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FAC7F5B391EE991EB438F352 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tableTest/Pods-tableTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tableTest/Pods-tableTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tableTest/Pods-tableTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -428,15 +491,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492EC74125852A9B00C4BE1A /* WineColors.swift in Sources */,
+				4946B5222588D66C00653CB1 /* WineSummaryInfo.swift in Sources */,
 				499788752548ADB300F48999 /* UserData.swift in Sources */,
+				492EC74625860F7100C4BE1A /* WineByCategory.swift in Sources */,
 				49C39A2C25595AEC003D5DF4 /* UserTableViewCell.swift in Sources */,
 				49A4383D2541EA5C0005ABBD /* ViewController.swift in Sources */,
+				491FB0A32584BFAB00844FCD /* AuthenticationService.swift in Sources */,
 				4997885C2547362E00F48999 /* NetworkService.swift in Sources */,
 				4997887E2549452B00F48999 /* URLs.swift in Sources */,
 				49F413F9254F19DA004A5B75 /* UserTableViewController.swift in Sources */,
 				49A438392541EA5C0005ABBD /* AppDelegate.swift in Sources */,
 				49A438432541EA5C0005ABBD /* tableTest.xcdatamodeld in Sources */,
-				49A4383B2541EA5C0005ABBD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -597,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

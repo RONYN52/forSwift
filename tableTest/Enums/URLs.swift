@@ -8,5 +8,9 @@
 import Foundation
 
 enum URLs {
-    static let  baseURL = "https://jsonplaceholder.typicode.com/todos/"
+    static let postURL = "https://quiniwine.com/signin"
+    static let getURL = "https://quiniwine.com/api/pub"
+    static let getSVGURL = "https://quiniwine.com/api/pub/wineBloom"
+    static let userApriori = "ronyn@list.ru"
+    static let passApriori = "Testpa$$123"
 }

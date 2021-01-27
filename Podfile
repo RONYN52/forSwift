@@ -16,4 +16,5 @@ target 'tableTest' do
     # Pods for testing
   end
 pod 'SwiftLint'
+pod 'SVGKit'
 end

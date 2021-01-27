@@ -6,23 +6,35 @@
 //
 
 import UIKit
+import SVGKit
+import WebKit
 
 class UserTableViewCell: UITableViewCell {
-    @IBOutlet private weak var labelTitle: UILabel!
+    private var wineDescription = String()
+    @IBOutlet private weak var labelName: UILabel!
+    @IBOutlet private weak var labelOld: UILabel!
+    @IBOutlet private weak var labelDescription: UILabel!
     @IBOutlet private weak var labelUserId: UILabel!
-    @IBOutlet private weak var labelId: UILabel!
-    @IBOutlet private weak var labelCompleted: UILabel!
+    @IBOutlet private weak var imageSVG: WKWebView!
+    private lazy var loadSVGService = NetworkService()
     // MARK: - ConfigureCellWithData
-    func configure(with userData: UserData){
-        labelTitle.text = userData.title
-        guard let id = userData.id,
-              let userId = userData.userId,
-              let completed = userData.completed
+    func configure(with wineData: Wine) {
+        guard let wineId = wineData.id,
+              let wineOld = wineData.vintage,
+              let wineName = wineData.Name,
+              let wineVarietal = wineData.Varietal
         else {
             return
         }
-        labelUserId.text = String(id)
-        labelId.text = String(userId)
-        labelCompleted.text = completed.description
+        if  let wineProperty = wineData.fullWineData {
+            wineDescription = "Happy " + (wineProperty.aggregate?.wine?.Varietal)!
+        }
+        else {
+            wineDescription = "Sorry - " + wineVarietal
+        }
+        labelName.text = wineName
+        labelOld.text = wineOld
+        labelDescription.text = wineDescription
+        
     }
 }

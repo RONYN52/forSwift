@@ -8,15 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private lazy var service = NetworkService()
+    private var token = String()
+    private lazy var tokenService = AutenticationService()
     @IBOutlet private weak var textOut: UITextField!
     @IBAction private func loadAllUserAction(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "UserTableViewController", bundle: nil)
-        guard let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as? UserTableViewController
-        else {
-            return
-        }
-        navigationController?.pushViewController(vc, animated: true)
+       
     }
     // MARK: - ClearTextOnTouch
     @IBAction private func getTextOutAction(_ sender: Any) {
@@ -24,24 +20,50 @@ class ViewController: UIViewController {
     }
     // MARK: - CheckingTheInputText
     @IBAction private func inputTextAction(_ sender: Any) {
-        guard var _ = Int(textOut.text ?? "1")
+        guard var _ = textOut.text
         else {
             return textOut.text = ""
         }
     }
+    // MARK: - SelectColor and CallFunc
+    @IBAction private func getRedWine(_ sender: Any) {
+        loadWineByColor(with: WineColors.red)
+    }
+    @IBAction private func gerWhiteWine(_ sender: Any) {
+        loadWineByColor(with: WineColors.white)
+    }
+    @IBAction private func getRoseWine(_ sender: Any) {
+        loadWineByColor(with: WineColors.rose)
+    }
+    @IBAction private func getAnyWine(_ sender: Any) {
+        loadWineByColor(with: WineColors.any)
+    }
     // MARK: - LoadDataFromServers
-    @IBAction private func loadSingleUserAction(_ sender: Any) {
-        service.loadDataFromServers(sendText: ""){ [weak self] (result) in
-            guard let self = self,
-                  let user = result,
-                  let textOutString = self.textOut.text,
-                  let index = Int(textOutString),
-                  let title = user[index - 1].title
+    private func loadWineByColor(with color: String) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "UserTableViewController", bundle: nil)
+        if #available(iOS 13.0, *) {
+            guard let vc = storyBoard.instantiateViewController(identifier: "UserTableViewController") as? UserTableViewController
             else {
                 return
             }
-            self.textOut.text = title
+            vc.param = (color, token)
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    override func viewDidLoad() {
+        tokenService.getToken(sendText: "") { [weak self] (result) in
+            guard let self = self,
+                  let userData = result,
+                  let userDataToken = userData.token
+            else {
+               return
+            }
+            self.token = userDataToken
         }
     }
 }
-
