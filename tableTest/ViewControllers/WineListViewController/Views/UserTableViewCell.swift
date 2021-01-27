@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SVGKit
 import WebKit
 
 class UserTableViewCell: UITableViewCell {
@@ -14,7 +13,6 @@ class UserTableViewCell: UITableViewCell {
     // MARK: - Properties
 
     private var wineDescription = String()
-    private lazy var loadSVGService = NetworkService()
 
     // MARK: - IBOutlets
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserTableViewController: UIViewController {
+class WineListViewController: UIViewController {
 
     // MARK: - Constants
 
@@ -81,7 +81,7 @@ class UserTableViewController: UIViewController {
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
 
-extension UserTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension WineListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wineData?.items.count ?? 0
     }
