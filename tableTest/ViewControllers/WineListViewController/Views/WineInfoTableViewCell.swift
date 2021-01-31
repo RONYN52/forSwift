@@ -1,5 +1,5 @@
 //
-//  UserTableViewCell.swift
+//  WineInfoTableViewCell.swift
 //  tableTest
 //
 //  Created by Andrew Iskandarov on 09.11.2020.
@@ -8,7 +8,15 @@
 import UIKit
 import WebKit
 
-class UserTableViewCell: UITableViewCell {
+class WineInfoTableViewCell: UITableViewCell {
+
+    // MARK: - Handlers
+
+    var webKitHandler: ((WKWebView?) -> Void)? = nil
+
+    // MARK: - Constants
+
+    static let identifier = String(describing: WineInfoTableViewCell.self)
 
     // MARK: - Properties
 
@@ -19,8 +27,8 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet private weak var labelName: UILabel!
     @IBOutlet private weak var labelOld: UILabel!
     @IBOutlet private weak var labelDescription: UILabel!
-    @IBOutlet private weak var labelUserId: UILabel!
-    @IBOutlet private weak var imageSVG: WKWebView!
+    @IBOutlet private weak var previewWebView: WKWebView!
+
 
     // MARK: - ConfigureCellWithData
 
@@ -33,7 +41,7 @@ class UserTableViewCell: UITableViewCell {
         else {
             return
         }
-        if  let description = wineData.fullWineData?.aggregate?.wine?.Varietal {
+        if let description = wineData.fullWineData?.aggregate?.wine?.Varietal {
             wineDescription = "Happy " + description
         } else {
             wineDescription = "Sorry - " + wineVarietal
@@ -41,5 +49,6 @@ class UserTableViewCell: UITableViewCell {
         labelName.text = wineName
         labelOld.text = wineOld
         labelDescription.text = wineDescription
+        webKitHandler?(previewWebView)
     }
 }

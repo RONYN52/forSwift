@@ -11,23 +11,13 @@ class WineListViewController: UIViewController {
 
     // MARK: - Constants
 
-    private let idCell = "mainCell"
+    private let authService = AuthorizationService()
     private let service = NetworkService()
 
     // MARK: - Properties
 
-    private var typeParam = ""
-    var param = (color: String(), token: String())
-    private var wineData: WineData? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    private var fullWineData: FullWineData? {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var wineColor: WineColor?
+    private var wines = [Wine]()
 
     // MARK: - IBOutlets
 
@@ -45,58 +35,65 @@ class WineListViewController: UIViewController {
         super.viewDidLoad()
 
         configureTableView()
-
-        switch param.color {
-        case WineColors.red: typeParam = "tre"
-        case WineColors.white: typeParam = "twh"
-        case WineColors.rose: typeParam = "tro"
-        case WineColors.any: typeParam = "t"
-        default:
-            typeParam = "t"
-        }
-
-        getWines()
+        loadWines()
 
     }
 
     // MARK: - Private methods
 
     private func configureTableView() {
-        tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: idCell)
+        tableView.register(UINib(nibName: WineInfoTableViewCell.identifier, bundle: nil),
+                           forCellReuseIdentifier: WineInfoTableViewCell.identifier)
         tableView.dataSource = self
         tableView.delegate = self
     }
 
-    private func getWines() {
-        service.loadWineByColors(sendText: typeParam, token: param.token) { [weak self] (result) in
-            guard let self = self,
-                  let wineData = result
-            else {
+    private func loadWines() {
+        self.service.loadWineByColors(sendText: self.wineColor?.rawValue ?? "",
+                                      token: "5pwib9e40khwwvzzco9c") { [weak self] (result) in
+            guard let self = self, let wines = result?.items else {
                 return
             }
-            self.wineData = wineData
+            self.wines.append(contentsOf: wines)
+            self.tableView.reloadData()
         }
+//        authService.getToken { [weak self] (token) in
+//            guard let self = self else {
+//                return
+//            }
+//
+//        }
     }
 }
 
 // MARK: - UITableViewDataSource & UITableViewDelegate
 
 extension WineListViewController: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wineData?.items.count ?? 0
+        return wines.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idCell) as? UserTableViewCell
-                guard let allWine = self.wineData,
-                      let wine = allWine.items[indexPath.row]
-                else {
-                    return cell ?? UITableViewCell()
-                }
-        cell?.configure(with: wine)
+        let cell = tableView.dequeueReusableCell(withIdentifier: WineInfoTableViewCell.identifier) as? WineInfoTableViewCell
+        cell?.configure(with: wines[indexPath.row])
+        cell?.webKitHandler = { [weak self] webView in
+            guard let self = self else {
+                return
+            }
+            guard let url = URL(string: "https://quiniwine.com/api/pub/wineBloom?wine_id=\(self.wines[indexPath.row].id ?? "")") else {
+                return
+            }
+            webView?.load(URLRequest(url: url))
+            webView?.contentScaleFactor = 0.01
+        }
         return cell ?? UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.row == wines.count - 5 else {
+            return
+        }
+        print("WE NEED NEW WINES TO LOAD")
     }
 }

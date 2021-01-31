@@ -7,7 +7,7 @@ inhibit_all_warnings!
 def pods_project 
 
   pod 'SwiftLint'
-  pod 'SVGKit'
+  pod 'ObjectMapper', '~> 4.2.0'
 
 end
 

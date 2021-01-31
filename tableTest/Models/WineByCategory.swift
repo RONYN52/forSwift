@@ -10,7 +10,7 @@ import Foundation
 struct WineData: Codable {
     let nextskip: Int?
     let category: String?
-    let items: [Wine?]
+    var items: [Wine]?
 }
 struct Wine: Codable {
     let _id: String?
